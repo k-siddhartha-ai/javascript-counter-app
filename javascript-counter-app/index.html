@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count</title>
+    <style>
+        .btn{
+            padding: 15px;
+            margin: 50px auto;
+            box-shadow: 0 0 40px black;
+            text-align: center;
+            width: 300px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color:antiquewhite;
+            border-radius: 13px;
+
+        }
+        .dec{
+            color:white;
+            background-color: red;
+            border-radius: 8px;
+            font-weight: bolder;
+            font-size: 20px;
+
+
+        }
+        button{
+            padding:20px;
+            width:50px;
+            background-color: green;
+            color:white;
+            border-radius: 8px;
+            font-weight:bolder;
+            font-size: 20px;
+            cursor:pointer;
+        }
+        
+        .div{
+            font-size: 2rem;
+            margin:30px 0;
+            color:red;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+            font-weight: bolder;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="btn">
+        <h1>Count</h1>   
+        <p id="div">0</p>
+        <button class="inc" onclick="inc()">+</button>
+        <button class="dec" onclick="dec()">-</button>
+    </div>
+    <script>
+        // let count="0";
+        // ternary operator ex:a>b ? a:b; --> if a is greater than b then ? check condition if it true it print a otherwise print b;
+        // let count= Number(localStorage.getItem("count"));
+        let count= (localStorage.getItem("count")) ? parseInt(localStorage.getItem("count")):0;
+        document.getElementById("div").innerHTML=count;
+        // console.log("Initial value:", count);
+        // console.log("Initial type:", typeof count);
+        function inc(){//increment
+            count+=1;
+            document.getElementById("div").innerHTML=count;
+            localStorage.setItem("count",count);
+            console.log(count);
+            console.log(count,typeof count);
+        }
+        function dec(){
+            count-=1;
+            document.getElementById("div").innerHTML=count;
+            localStorage.setItem("count",count);
+            //console.log(count);
+            //console.log(typeof count);
+
+            console.log(count);
+            console.log(count,typeof count);
+        }
+    </script>
+</body>
+</html>
